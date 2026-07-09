@@ -13,4 +13,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Run the local binaries using pnpm exec
-CMD pnpm exec mcp-proxy --port $PORT --apiKey $MCP_API_KEY -- pnpm exec mongodb-mcp-server
+CMD pnpm exec mcp-proxy --port $PORT --apiKey $MCP_API_KEY -- pnpm exec mongodb-mcp-server --readOnly
