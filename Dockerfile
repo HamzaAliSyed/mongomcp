@@ -5,8 +5,8 @@ WORKDIR /app
 # Enable pnpm
 RUN corepack enable pnpm
 
-# Install the dependencies locally in the container instead of globally
-RUN pnpm add mcp-proxy @mongodb-js/mongodb-mcp-server
+# Install proxy and the newly renamed server, bypassing optional C++ build scripts
+RUN pnpm add mcp-proxy mongodb-mcp-server --ignore-scripts
 
 # Default port for cloud deployment
 ENV PORT=8080
