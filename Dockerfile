@@ -1,7 +1,10 @@
-# Upgrade to Node 22 to support modern pnpm features
 FROM node:22-alpine
 
 WORKDIR /app
+
+# Configure the global bin directory for pnpm and add it to PATH
+ENV PNPM_HOME="/root/.local/share/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 
 # Enable pnpm
 RUN corepack enable pnpm
