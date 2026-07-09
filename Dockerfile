@@ -1,4 +1,5 @@
-FROM node:20-alpine
+# Upgrade to Node 22 to support modern pnpm features
+FROM node:22-alpine
 
 WORKDIR /app
 
